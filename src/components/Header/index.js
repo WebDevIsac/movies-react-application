@@ -4,6 +4,8 @@ import Navbar from '../Navbar';
 import styled from 'styled-components';
 
 const HeaderStyled = styled.header`
+	position: fixed;
+	top: 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

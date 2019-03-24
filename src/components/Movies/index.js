@@ -7,7 +7,7 @@ const MoviesStyled = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	padding: 20px 40px;
+	padding: 10px 40px 0 40px;
 `;
 
 const Movies = (props) => {

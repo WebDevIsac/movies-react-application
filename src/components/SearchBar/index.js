@@ -9,7 +9,7 @@ const SearchBarStyled = styled.div`
 	width: 300px;
 	height: 45px;
 	background: lightsalmon;
-	opacity: 0.8;
+	opacity: 0.9;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;

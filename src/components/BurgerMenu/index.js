@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BurgerMenuStyled = styled.div`
-	/* position: absolute;
+	position: relative;
 	top: 0;
-	right: 0; */
+	right: 0;
 	cursor: pointer;
 	z-index: 10;
 
@@ -35,7 +35,7 @@ const BurgerMenu = () => {
 
 	const toggleMenu = () => {
 		document.querySelector('#burger-menu').classList.toggle('transform');
-		document.querySelector('#menu').classList.toggle('toggle-menu');
+		document.querySelector('#modal').classList.toggle('toggle-modal');
 	}
 
 	return (

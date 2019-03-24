@@ -29,7 +29,7 @@ const Movie = ({movieData}) => {
 	const imageSource = `https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movieData.poster_path}`;
 	return (
 		<MovieStyled>
-			<img src={imageSource}></img>
+			<img src={imageSource} alt="movie poster"></img>
 			<h3>{movieData.title}</h3>
 			<p>{movieData.overview}</p>
 		</MovieStyled>
