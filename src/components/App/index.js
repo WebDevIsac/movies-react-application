@@ -8,9 +8,10 @@ import Modal from '../Modal';
 
 const AppStyled = styled.div`
 	color: black;
-
 	padding-top: 100px;
 	text-align: center;
+	@import url('https://fonts.googleapis.com/css?family=Roboto');
+	font-family: 'Roboto';
 `;
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY;
@@ -28,7 +29,7 @@ class App extends Component {
 	componentDidMount() {
 		const apiPopularity = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`;
 		fetch(apiPopularity)
-			.then(response => response.json())
+		.then(response => response.json())
 			.then(data => {
 				this.setState({
 					movies: data,
@@ -36,9 +37,9 @@ class App extends Component {
 					fetchType: "Popular Movies"
 				});
 			});
-
-		const apiCategories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`;
-		fetch(apiCategories)
+			
+			const apiCategories = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`;
+			fetch(apiCategories)
 			.then(response => response.json())
 			.then(data => {
 				this.setState({
@@ -64,6 +65,10 @@ class App extends Component {
 					fetchType: `Searched: ${this.state.inputValue}`
 				});
 			});
+
+		document.querySelector('#burger-menu').classList.remove('transform');
+		document.querySelector('#modal').classList.add('toggle-modal');
+		this.smoothScroll();
 	}
 
 	handleCategory = (e) => {
@@ -78,14 +83,21 @@ class App extends Component {
 					fetchType: `Category: ${categoryName}`
 				})
 			});
-				document.querySelector('#burger-menu').classList.toggle('transform');
-				document.querySelector('#modal').classList.toggle('toggle-modal');
+
+		document.querySelector('#burger-menu').classList.remove('transform');
+		document.querySelector('#modal').classList.add('toggle-modal');
+		this.smoothScroll();
 	}
 
-
-		render() {
+	smoothScroll = () => {
+		const start = document.querySelector('#start');
+		start.scrollIntoView({block: "start", behavior: "smooth"})
+	}
+	
+	
+	render() {
 			return (
-				<AppStyled>
+				<AppStyled id="start">
 					<Modal>
 						<div>
 							{this.state.categories.map((category, index) => {
@@ -97,7 +109,7 @@ class App extends Component {
 					<Header/>
 					<Movies moviesData={this.state.movies} fetched={this.state.fetched}/>
 					<SearchBar>
-						<input onChange={this.handleInput} type="text" id="search" name="search" placeholder="Search Input..." autoComplete="off" value={this.state.inputValue}></input>
+						<input onChange={this.handleInput} type="text" id="search" name="search" placeholder="Search Movie..." autoComplete="off" value={this.state.inputValue}></input>
 						<div onClick={this.handleSearch}>
 							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 							strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-search">

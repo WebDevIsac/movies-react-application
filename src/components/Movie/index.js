@@ -13,9 +13,9 @@ const MovieStyled = styled.div`
 		width: 100%;
 	}
 
-	h3 {
+	h2 {
 		text-align: center;
-		margin: 6px 0;
+		margin-top: 20px;
 	}
 
 	p {
@@ -30,7 +30,7 @@ const Movie = ({movieData}) => {
 	return (
 		<MovieStyled>
 			<img src={imageSource} alt="movie poster"></img>
-			<h3>{movieData.title}</h3>
+			<h2>{movieData.title}</h2>
 			<p>{movieData.overview}</p>
 		</MovieStyled>
 	);
