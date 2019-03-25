@@ -8,7 +8,6 @@ const MovieStyled = styled.div`
 	align-items: center;
 	box-shadow: 8px 8px 16px 6px grey;
 	margin: 20px 0;
-	padding: 0 10px;
 
 	img {
 		width: 100%;
@@ -16,12 +15,12 @@ const MovieStyled = styled.div`
 
 	h2 {
 		text-align: center;
-		margin-top: 20px;
+		margin: 20px 10px 0 10px;
 	}
 
 	p {
 		text-align: left;
-		margin: 16px 0;
+		margin: 16px 10px;
 	}
 
 `;
