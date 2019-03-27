@@ -11,6 +11,7 @@ const MovieStyled = styled.div`
 
 	img {
 		width: 100%;
+		
 	}
 
 	h2 {
